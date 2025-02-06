@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 import Navbar from '../layout/Navbar';
 import { people } from '../data/data';
 
@@ -8,8 +8,6 @@ function Profile() {
   const person = people.find((p) => p.id === personId);
   return (
     <div className="">
-      <Navbar />
-
       <div className="d-flex flex-column align-items-center">
         <div className="col-6 col-lg-5">
           <h2 className="text-center mt-5">Profile Page</h2>
@@ -22,6 +20,7 @@ function Profile() {
             </div>
           </div>
         </div>
+        <Link to={'/home'}>Back to Home Page</Link>
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 import Navbar from '../layout/Navbar';
 import { people } from '../data/data';
-import { Link } from 'react-router';
+import { Link, Outlet } from 'react-router';
 
 function Home() {
   console.log(people);
   return (
     <>
-      <Navbar />
       <div className="mt-5 text-center d-flex flex-column align-items-center">
         <h1>Home Page</h1>
 
@@ -18,10 +17,11 @@ function Home() {
             >
               <div>{person.name}</div>
               {/* Why the person.id is treated as a string */}
-              <Link to={'/profile/' + person.id}>View Profile</Link>
+              <Link to={'/home/' + person.id}>View Profile</Link>
             </li>
           ))}
         </ul>
+        <Outlet/>
       </div>
     </>
   );
